@@ -1,0 +1,30 @@
+<!-- 11. admin-patients.html -->
+{% extends "admin-layout.html" %}
+{% block title %}Quản lý bệnh nhân - Admin{% endblock %}
+{% block page_title %}Quản lý bệnh nhân{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalPatient">Thêm bệnh nhân</button>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead><tr><th>ID</th><th>Tên bệnh nhân</th><th>Ngày sinh</th><th>Số điện thoại</th><th>Địa chỉ</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Trần Thị B</td>
+          <td>15/05/1990</td>
+          <td>0123456789</td>
+          <td>Hà Nội</td>
+          <td>
+            <button class="btn btn-sm btn-warning">Sửa</button>
+            <button class="btn btn-sm btn-info">Xem</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

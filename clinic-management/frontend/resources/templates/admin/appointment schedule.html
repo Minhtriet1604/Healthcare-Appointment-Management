@@ -1,0 +1,30 @@
+<!-- 17. admin-appointments.html -->
+{% extends "admin-layout.html" %}
+{% block title %}Lịch khám - Admin{% endblock %}
+{% block page_title %}Quản lý lịch khám{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAppointment">Thêm lịch khám</button>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead><tr><th>ID</th><th>Bác sĩ</th><th>Bệnh nhân</th><th>Thời gian</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Nguyễn Văn A</td>
+          <td>Trần Thị B</td>
+          <td>21/12/2025 08:00</td>
+          <td><span class="badge badge-warning">Chờ khám</span></td>
+          <td>
+            <button class="btn btn-sm btn-warning">Sửa</button>
+            <button class="btn btn-sm btn-info">Xem</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!-- 14. doctor-personal.html -->
+{% extends "doctor-layout.html" %}
+{% block title %}Thông tin cá nhân - Bác sĩ{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-primary card-outline">
+        <div class="card-body box-profile">
+          <div class="text-center">
+            <img class="profile-user-img img-fluid img-circle" src="/static/images/default-avatar.png" alt="User profile picture">
+          </div>
+          <h3 class="profile-username text-center">Nguyễn Văn A</h3>
+          <p class="text-muted text-center">Bác sĩ Nội khoa</p>
+          <ul class="list-group list-group-unbordered mb-3">
+            <li class="list-group-item">
+              <b>Email</b> <a class="float-right">nguyenvana@example.com</a>
+            </li>
+            <li class="list-group-item">
+              <b>Số điện thoại</b> <a class="float-right">0123456789</a>
+            </li>
+            <li class="list-group-item">
+              <b>Kinh nghiệm</b> <a class="float-right">5 năm</a>
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block"><b>Chỉnh sửa thông tin</b></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header p-2">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Hoạt động</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Lịch sử</a></li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="active tab-pane" id="activity">
+              <div class="post">
+                <div class="user-block">
+                  <span class="username">
+                    <a href="#">Khám bệnh cho bệnh nhân Trần Thị B</a>
+                  </span>
+                  <span class="description">Hôm nay - 10:30 AM</span>
+                </div>
+                <p>Khám và kê đơn thuốc cho bệnh nhân.</p>
+              </div>
+            </div>
+            <div class="tab-pane" id="timeline">
+              <div class="timeline timeline-inverse">
+                <div class="time-label">
+                  <span class="bg-danger">10 Dec. 2025</span>
+                </div>
+                <div>
+                  <i class="fas fa-user-md bg-blue"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Khám bệnh</a> cho bệnh nhân</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
