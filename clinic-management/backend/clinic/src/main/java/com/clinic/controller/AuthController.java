@@ -1,8 +1,7 @@
-package com.clinic.controller;
+package com.example.healthcare.controller;
 
-import com.clinic.model.User;
-import com.clinic.service.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.healthcare.dto.LoginRequest;
+import com.example.healthcare.dto.LoginResponse;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,21 +9,86 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private AuthService authService;
-
+    /**
+     * API đăng nhập
+     * @param request dữ liệu đăng nhập từ client
+     * @return LoginResponse
+     */
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody User user) {
-        User result = authService.login(user.getUsername(), user.getPassword());
-        if (result == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body("Invalid username or password");
+    public ResponseEntity<LoginResponse> login(
+            @RequestBody LoginRequest request) {
+
+        // 1️⃣ Kiểm tra dữ liệu đầu vào
+        if (request.getUsername() == null || request.getPassword() == null) {
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(new LoginResponse(
+                            false,
+                            "Thiếu username hoặc password",
+                            null
+                    ));
         }
-        return ResponseEntity.ok(result);
+
+        // 2️⃣ Demo dữ liệu (chưa dùng DB)
+        if ("admin".equals(request.getUsername())
+                && "123".equals(request.getPassword())) {
+
+            return ResponseEntity.ok(
+                    new LoginResponse(
+                            true,
+                            "Đăng nhập thành công",
+                            "ADMIN"
+                    )
+            );
+        }
+
+        if ("doctor".equals(request.getUsername())
+                && "123".equals(request.getPassword())) {
+
+            return ResponseEntity.ok(
+                    new LoginResponse(
+                            true,
+                            "Đăng nhập thành công",
+                            "DOCTOR"
+                    )
+            );
+        }
+
+        if ("patient".equals(request.getUsername())
+                && "123".equals(request.getPassword())) {
+
+            return ResponseEntity.ok(
+                    new LoginResponse(
+                            true,
+                            "Đăng nhập thành công",
+                            "PATIENT"
+                    )
+            );
+        }
+
+        // 3️⃣ Sai thông tin đăng nhập
+        return ResponseEntity
+                .status(HttpStatus.UNAUTHORIZED)
+                .body(new LoginResponse(
+                        false,
+                        "Sai username hoặc password",
+                        null
+                ));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        return ResponseEntity.ok(authService.register(user));
+    /**
+     * API đăng xuất
+     */
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout() {
+        return ResponseEntity.ok("Đăng xuất thành công");
+    }
+
+    /**
+     * API lấy thông tin user hiện tại
+     */
+    @GetMapping("/me")
+    public ResponseEntity<String> getCurrentUser() {
+        return ResponseEntity.ok("Thông tin người dùng hiện tại");
     }
 }

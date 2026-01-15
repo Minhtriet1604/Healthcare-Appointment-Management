@@ -1,9 +1,20 @@
-package com.clinic.config;
+package com.example.healthcare.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import javax.sql.DataSource;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 
 @Configuration
-@EnableTransactionManagement
 public class DatabaseConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return DataSourceBuilder.create()
+                .url("jdbc:mysql://localhost:3306/healthcare_db")
+                .username("root")
+                .password("")
+                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .build();
+    }
 }
