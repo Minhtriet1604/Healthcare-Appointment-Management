@@ -1,5 +1,9 @@
-package clinic-management.backend.clinic.src.main.java.com.clinic.config;
+package com.clinic.config;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableTransactionManagement
 public class DatabaseConfig {
-    
 }
