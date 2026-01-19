@@ -1,0 +1,21 @@
+<!-- 9. admin-dashboard.html -->
+{% extends "admin-layout.html" %}
+{% block title %}Tổng quan - Admin{% endblock %}
+{% block page_title %}Tổng quan hệ thống{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-3 col-6">
+    <div class="small-box bg-danger">
+      <div class="inner"><h3>128</h3><p>Shop đang hoạt động</p></div>
+      <div class="icon"><i class="fas fa-store"></i></div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-6">
+    <div class="small-box bg-warning">
+      <div class="inner"><h3>1.2 tỷ</h3><p>Tổng doanh thu tháng</p></div>
+      <div class="icon"><i class="fas fa-money-bill-wave"></i></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
