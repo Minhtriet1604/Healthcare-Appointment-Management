@@ -1,0 +1,30 @@
+<!-- 10. admin-doctors.html -->
+{% extends "admin-layout.html" %}
+{% block title %}Quản lý bác sĩ - Admin{% endblock %}
+{% block page_title %}Quản lý bác sĩ{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalDoctor">Thêm bác sĩ</button>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead><tr><th>ID</th><th>Tên bác sĩ</th><th>Chuyên khoa</th><th>Email</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Nguyễn Văn A</td>
+          <td>Nội khoa</td>
+          <td>nguyenvana@example.com</td>
+          <td><span class="badge badge-success">Hoạt động</span></td>
+          <td>
+            <button class="btn btn-sm btn-warning">Sửa</button>
+            <button class="btn btn-sm btn-info">Xem</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

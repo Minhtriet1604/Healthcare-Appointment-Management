@@ -1,0 +1,45 @@
+<!-- 13. admin-departments.html -->
+{% extends "admin-layout.html" %}
+{% block title %}Khoa & Phòng khám - Admin{% endblock %}
+{% block page_title %}Quản lý khoa và phòng khám{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalDepartment">Thêm khoa</button>
+    <button class="btn btn-secondary ml-2" data-toggle="modal" data-target="#modalClinic">Thêm phòng khám</button>
+  </div>
+  <div class="card-body">
+    <h5>Khoa</h5>
+    <table class="table table-bordered">
+      <thead><tr><th>ID</th><th>Tên khoa</th><th>Mô tả</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Nội khoa</td>
+          <td>Chuyên khoa nội</td>
+          <td>
+            <button class="btn btn-sm btn-warning">Sửa</button>
+            <button class="btn btn-sm btn-info">Xem</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="mt-4">Phòng khám</h5>
+    <table class="table table-bordered">
+      <thead><tr><th>ID</th><th>Tên phòng</th><th>Khoa</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Phòng khám 1</td>
+          <td>Nội khoa</td>
+          <td>
+            <button class="btn btn-sm btn-warning">Sửa</button>
+            <button class="btn btn-sm btn-info">Xem</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
