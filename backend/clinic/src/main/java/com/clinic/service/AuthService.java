@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     public User login(String username, String password) {
-        // Demo logic – phù hợp bài nộp
         if ("admin".equals(username) && "admin".equals(password)) {
             User user = new User();
             user.setUsername(username);
