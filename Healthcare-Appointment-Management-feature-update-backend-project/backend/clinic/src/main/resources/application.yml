@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: clinic
+  datasource:
+    url: jdbc:h2:mem:clinicdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      static-locations: classpath:/static/
+  security:
+    user:
+      name: admin
+      password: admin
